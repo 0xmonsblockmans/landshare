@@ -5,7 +5,7 @@ import { ArrowUpDownIcon } from "lucide-react";
 import { Select, SelectSection, SelectItem } from "@nextui-org/select";
 function SwabTokensCard() {
   return (
-    <div className="p-6 flex  flex-col gap-4 w-96">
+    <div className="p-6 flex  flex-col gap-4 w-96 bg-white rounded-2xl h-fit">
       <section className="flex flex-col gap-2">
         <div>
           <h4>Swap Token</h4>
@@ -39,11 +39,6 @@ function SwabTokensCard() {
                 innerWrapper: "w-full",
               }}
               defaultSelectedKeys={["1"]}
-              startContent={
-                <div className="size-4 flex items-center">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ43MuDqq54iD1ZCRL_uthAPkfwSSL-J5qI_Q&s" />
-                </div>
-              }
             >
               <SelectItem
                 key="1"
@@ -87,7 +82,7 @@ function SwabTokensCard() {
           <div className="">
             <p className="text-red-600 font-bold">KYC not verified</p>
           </div>
-          <p className="w-3/5 text-[#535457]">
+          <p className="w-3/5 text-content">
             Please continue to verify your identity for the security of your
             account
           </p>

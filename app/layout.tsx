@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Inter_Tight } from "next/font/google";
+import { Button } from "./componenets/Button";
 
 const interTight = Inter_Tight({
   subsets: ["latin"],
@@ -18,8 +19,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${interTight.className} antialiased`}>{children}</body>
+    <html lang="en" className="bg-gray-100 py-8">
+      <body
+        className={`${interTight.className} antialiased flex flex-col gap-10  `}
+      >
+        <div className="w-full container mx-auto">
+          <nav className=" w-full items-center justify-between rounded-full p-4 ps-10 bg-white shadow-small flex">
+            <div>logo</div>
+            <ul className="flex font-bold items-center text-sm justify-between gap-10">
+              <li>Flips</li>
+              <li>Properties</li>
+              <li>FAQS</li>
+              <li>
+                <Button size="lg" className="rounded-full">
+                  White Paper
+                </Button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        {children}
+      </body>
     </html>
   );
 }

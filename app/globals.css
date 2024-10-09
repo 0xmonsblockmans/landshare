@@ -42,6 +42,12 @@ p {
 [data-slot="trigger"] {
   background-color: transparent;
 }
+.__tip_radius {
+  border-end-end-radius: 12px;
+  border-end-start-radius: 32px;
+  border-start-start-radius: 32px;
+  border-start-end-radius: 12px;
+}
 @layer base {
   :root {
     --chart-1: 12 76% 61%;

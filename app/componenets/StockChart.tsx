@@ -1,7 +1,16 @@
 "use client";
 
+import { TrendingUp } from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/app/componenets/card";
 import {
   ChartConfig,
   ChartContainer,
@@ -9,57 +18,68 @@ import {
   ChartTooltipContent,
 } from "@/app/componenets/chart";
 
-export const description = "A linear area chart";
+export const description = "An area chart with gradient fill";
 
 const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { month: "January", desktop: 186, mobile: 80 },
+  { month: "February", desktop: 305, mobile: 200 },
+  { month: "March", desktop: 237, mobile: 120 },
+  { month: "April", desktop: 73, mobile: 190 },
+  { month: "May", desktop: 209, mobile: 130 },
+  { month: "June", desktop: 214, mobile: 140 },
 ];
 
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
+  price: {
+    label: "Price",
     color: "hsl(var(--chart-1))",
   },
 } satisfies ChartConfig;
 
 function Component() {
   return (
-    <ChartContainer config={chartConfig}>
-      <AreaChart
-        accessibilityLayer
-        data={chartData}
-        margin={{
-          left: 12,
-          right: 12,
-        }}
-      >
-        <CartesianGrid vertical={false} />
-        <XAxis
-          dataKey="month"
-          tickLine={false}
-          axisLine={false}
-          tickMargin={8}
-          tickFormatter={(value) => value.slice(0, 3)}
-        />
-        <ChartTooltip
-          cursor={false}
-          content={<ChartTooltipContent indicator="dot" hideLabel />}
-        />
-        <Area
-          dataKey="desktop"
-          type="linear"
-          fill="var(--color-desktop)"
-          fillOpacity={0.4}
-          stroke="var(--color-desktop)"
-        />
-      </AreaChart>
-    </ChartContainer>
+    <Card className="bg-white border-none shadow-none rounded-2xl">
+      <CardHeader>
+        <CardTitle>$300.00</CardTitle>
+        <CardDescription>Apr 27, 2023, 1:00 (UTC) </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <ChartContainer className="min-h-[200px] w-full" config={chartConfig}>
+          <AreaChart
+            accessibilityLayer
+            data={chartData}
+            margin={{
+              left: 12,
+              right: 12,
+            }}
+          >
+            <CartesianGrid vertical={false} />
+            <XAxis
+              dataKey="month"
+              tickLine={false}
+              axisLine={false}
+              tickMargin={8}
+              tickFormatter={(value) => value.slice(0, 3)}
+            />
+            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+            <defs>
+              <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#61CD81" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#61CD81" stopOpacity={0.1} />
+              </linearGradient>
+            </defs>
+            <Area
+              dataKey="desktop"
+              type="linear"
+              fill="url(#fillDesktop)"
+              fillOpacity={0.4}
+              stroke="#61CD81"
+              stackId="a"
+            />
+          </AreaChart>
+        </ChartContainer>
+      </CardContent>
+    </Card>
   );
 }
-
 export default Component;
