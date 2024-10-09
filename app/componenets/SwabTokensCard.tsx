@@ -2,9 +2,10 @@
 import React from "react";
 import { Button } from "./Button";
 import { ArrowUpDownIcon } from "lucide-react";
+import { Select, SelectSection, SelectItem } from "@nextui-org/select";
 function SwabTokensCard() {
   return (
-    <div className="p-6 flex shadow-2xl flex-col gap-4 w-96">
+    <div className="p-6 flex  flex-col gap-4 w-96">
       <section className="flex flex-col gap-2">
         <div>
           <h4>Swap Token</h4>
@@ -32,15 +33,29 @@ function SwabTokensCard() {
         />
         <div className="flex justify-between items-center">
           <div>
-            {/* <Select
-              className="max-w-xs"
+            <Select
+              className="max-w-2/3 bg-transparent"
+              classNames={{
+                innerWrapper: "w-full",
+              }}
               defaultSelectedKeys={["1"]}
-              label="Favorite Animal"
-              placeholder="Select an animal"
-              startContent={<>as</>}
+              startContent={
+                <div className="size-4 flex items-center">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ43MuDqq54iD1ZCRL_uthAPkfwSSL-J5qI_Q&s" />
+                </div>
+              }
             >
-              <SelectItem key="1">dafal</SelectItem>
-            </Select> */}
+              <SelectItem
+                key="1"
+                startContent={
+                  <div className="size-4 flex items-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ43MuDqq54iD1ZCRL_uthAPkfwSSL-J5qI_Q&s" />
+                  </div>
+                }
+              >
+                USDC
+              </SelectItem>
+            </Select>
           </div>
           <div>
             <ArrowUpDownIcon color="#61CD81" size={16} />

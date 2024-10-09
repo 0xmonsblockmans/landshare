@@ -36,6 +36,12 @@ p {
   font-size: 14px;
   font-weight: 400;
 }
+[data-slot="mainWrapper"] {
+  width: 130px;
+}
+[data-slot="trigger"] {
+  background-color: transparent;
+}
 @layer base {
   :root {
     --chart-1: 12 76% 61%;

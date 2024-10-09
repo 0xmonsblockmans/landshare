@@ -7,7 +7,7 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/app/components/chart";
+} from "@/app/componenets/chart";
 
 export const description = "A linear area chart";
 
