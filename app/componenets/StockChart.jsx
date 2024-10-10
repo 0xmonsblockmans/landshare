@@ -17,6 +17,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/app/componenets/chart";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const description = "An area chart with gradient fill";
 
@@ -39,12 +40,26 @@ const chartConfig = {
 function Component() {
   return (
     <Card className="bg-white border-none shadow-none rounded-2xl">
-      <CardHeader>
-        <CardTitle>$300.00</CardTitle>
-        <CardDescription>Apr 27, 2023, 1:00 (UTC) </CardDescription>
+      <CardHeader className="w-full">
+        <div className="flex items-center gap-1">
+          <img src="/images/Logo.png" className="size-6" alt="" />
+          <h5>RWA/USDC</h5>
+        </div>
+        <div className="w-full flex  justify-between">
+          <h4>$300.00</h4>
+          <Tabs defaultValue="year" className="w-[400px] flex justify-end">
+            <TabsList>
+              <TabsTrigger value="hours">24H</TabsTrigger>
+              <TabsTrigger value="week">1W</TabsTrigger>
+              <TabsTrigger value="month">1M</TabsTrigger>
+              <TabsTrigger value="year">1Y</TabsTrigger>
+            </TabsList>
+          </Tabs>
+        </div>
+        <h6>Apr 27, 2023, 1:00 (UTC) </h6>
       </CardHeader>
       <CardContent>
-        <ChartContainer className="min-h-[200px] w-full" config={chartConfig}>
+        <ChartContainer className="h-[200px] w-full" config={chartConfig}>
           <AreaChart
             accessibilityLayer
             data={chartData}

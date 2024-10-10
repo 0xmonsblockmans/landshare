@@ -19,7 +19,9 @@ export default function RootLayout({ children }) {
       >
         <div className="w-full container px-10 mx-auto">
           <nav className=" w-full items-center shadow-small justify-between rounded-full px-4 py-2 ps-10 bg-white  flex">
-            <div>logo</div>
+            <div>
+              <img src="/images/Logo.png" alt="logo" className="size-10" />
+            </div>
             <ul className="flex font-bold items-center text-sm justify-between gap-10">
               <li>Flips</li>
               <li>Properties</li>

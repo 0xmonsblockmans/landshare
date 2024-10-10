@@ -48,6 +48,60 @@ p {
   border-start-start-radius: 32px;
   border-start-end-radius: 12px;
 }
+.custom-slider {
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    #61cd81 0%,
+    #61cd81 50%,
+    #e5e7eb 50%,
+    #e5e7eb 100%
+  );
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 2px solid #61cd81;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 2px solid #61cd81;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-slider::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 2px solid #61cd81;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-slider::-moz-range-track {
+  background: none; /* Needed for Firefox */
+}
+
+.custom-slider::-ms-track {
+  background: none; /* Needed for IE */
+  border-color: transparent;
+  color: transparent;
+}
+
 @layer base {
   :root {
     --chart-1: 12 76% 61%;
@@ -102,5 +156,13 @@ p {
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
