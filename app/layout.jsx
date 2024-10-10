@@ -23,9 +23,11 @@ export default function RootLayout({ children }) {
               <img src="/images/Logo.png" alt="logo" className="size-10" />
             </div>
             <ul className="flex font-bold items-center text-sm justify-between gap-10">
-              <li>Flips</li>
-              <li>Properties</li>
-              <li>FAQS</li>
+              <div className="md:flex gap-10 hidden">
+                <li>Flips</li>
+                <li>Properties</li>
+                <li>FAQS</li>
+              </div>
               <li>
                 <Button size="lg" className="rounded-full h-12 font-bold">
                   White Paper

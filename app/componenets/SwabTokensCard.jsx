@@ -5,7 +5,7 @@ import { ArrowUpDownIcon } from "lucide-react";
 import { Select, SelectSection, SelectItem } from "@nextui-org/select";
 function SwabTokensCard() {
   return (
-    <div className="p-6 flex  flex-col gap-4 w-96 bg-white rounded-2xl h-fit">
+    <div className="p-6 flex  flex-col gap-4 w-full bg-white rounded-2xl h-fit">
       <section className="flex flex-col gap-2">
         <div>
           <h4>Swap Token</h4>

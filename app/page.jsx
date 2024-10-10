@@ -63,11 +63,11 @@ export default function Home() {
         <p className="font-bold text-primary">Home /</p>
         <p className="text-content2">Real World Assets</p>
       </div>
-      <section className="flex px-10 mb-20 container mx-auto gap-12">
-        <div className="w-2/3  flex flex-col gap-12">
+      <section className="flex flex-col lg:flex-row px-10 mb-20 container mx-auto gap-12">
+        <div className="w-full lg:w-2/3  flex flex-col gap-12">
           <StockChart />
-          <section className="flex gap-6">
-            <div className="bg-white p-6 w-1/3 rounded-2xl flex flex-col gap-2">
+          <section className="flex gap-6 overflow-x-scroll pb-5">
+            <div className="bg-white p-6 min-w-[214px] lg:w-1/3 rounded-2xl flex flex-col gap-2">
               <p className="text-content2">Cash on Cash Return</p>
               <div className="flex gap-2 items-center">
                 <div className="bg-gray-100 rounded-full border-[1px] border-gray-300 size-8 flex items-center justify-center">
@@ -76,7 +76,7 @@ export default function Home() {
                 <h4>7.76%</h4>
               </div>
             </div>
-            <div className="bg-white p-6 w-1/3 rounded-2xl flex flex-col gap-2">
+            <div className="bg-white p-6 min-w-[214px] lg:w-1/3 rounded-2xl flex flex-col gap-2">
               <p className="text-content2">Avg. Net Rent</p>
               <div className="flex gap-2 items-center">
                 <div className="bg-gray-100 rounded-full border-[1px] border-gray-300 size-8 flex items-center justify-center">
@@ -85,7 +85,7 @@ export default function Home() {
                 <h4>$10,499</h4>
               </div>
             </div>
-            <div className="bg-white p-6 w-1/3 rounded-2xl flex flex-col gap-2">
+            <div className="bg-white p-6 min-w-[214px] lg:w-1/3 rounded-2xl flex flex-col gap-2">
               <p className="text-content2">Gross Rent per Year</p>
               <div className="flex gap-2 items-center">
                 <div className="bg-gray-100 rounded-full border-[1px] border-gray-300 size-8 flex items-center justify-center">
@@ -118,24 +118,26 @@ export default function Home() {
             ))}
           </section>
         </div>
-        <SwabTokensCard />
+        <div className="w-full lg:w-1/3">
+          <SwabTokensCard />
+        </div>
       </section>
       <section className="w-full  bg-white ">
         <div className="container px-10 pt-12 space-y-10 mx-auto">
           <div className="w-full text-center">
             <h2>Our Benefical Assets</h2>
           </div>
-          <div className="flex justify-between">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
             {/* asset card */}
-            <div className="w-[373px] relative bg-white  rounded-2xl shadow-medium flex flex-col justify-between">
+            <div className="w-full relative bg-white  rounded-2xl shadow-medium flex flex-col justify-between">
               {/* head section */}
-              <div className="absolute -end-3 top-8 shadow-md bg-red-500 p-1 px-3  __tip_radius">
+              <div className="absolute -end-3 top-12 shadow-md bg-red-500 p-1 px-3  __tip_radius">
                 <h6 className="text-white font-bold">Rental Property</h6>
               </div>
               <div
                 className="rounded-t-2xl h-64  bg-cover bg-center bg-no-repeat "
                 style={{
-                  backgroundImage: "url(/images/home-pic.jpg",
+                  backgroundImage: "url(/images/home-pic.jpg)",
                 }}
               >
                 <div className="bg-gradient-to-b from-black/70 p-4 rounded-t-2xl  to-black/0 w-full ">
@@ -149,13 +151,15 @@ export default function Home() {
               <div className="p-4 space-y-5">
                 <div className="flex justify-between ">
                   <div>
-                    <h6>Total Investments</h6> <h5>$136.600</h5>
+                    <h6>Total Investments</h6>{" "}
+                    <p className="font-bold">$136.600</p>
                   </div>
                   <div>
-                    <h6>APR Equivalent</h6> <h5>$27% - 52%</h5>
+                    <h6>APR Equivalent</h6>{" "}
+                    <p className="font-bold">$27% - 52%</p>
                   </div>
                   <div>
-                    <h6>Token Price</h6> <h5>$50.00</h5>
+                    <h6>Token Price</h6> <p className="font-bold">$50.00</p>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
@@ -164,7 +168,7 @@ export default function Home() {
                       Single Family
                     </p>
                   </div>
-                  <div className="flex text-sm gap-4">
+                  <div className="flex text-sm gap-4 lg:gap-2">
                     <div className="flex items-center gap-1">
                       <Armchair className="stroke-primary" size={20} />4
                     </div>
@@ -187,9 +191,9 @@ export default function Home() {
               </div>
             </div>
             {/* asset card */}
-            <div className="w-[373px] relative bg-white  rounded-2xl shadow-medium flex flex-col justify-between">
+            <div className="w-full relative bg-white  rounded-2xl shadow-medium flex flex-col justify-between">
               {/* head section */}
-              <div className="absolute -end-3 top-8 shadow-md bg-red-500 p-1 px-3  __tip_radius">
+              <div className="absolute -end-3 top-12 shadow-md bg-red-500 p-1 px-3  __tip_radius">
                 <h6 className="text-white font-bold">Rental Property</h6>
               </div>
               <div
@@ -209,13 +213,15 @@ export default function Home() {
               <div className="p-4 space-y-5">
                 <div className="flex justify-between ">
                   <div>
-                    <h6>Total Investments</h6> <h5>$136.600</h5>
+                    <h6>Total Investments</h6>
+                    <p className="font-bold">$136.600</p>
                   </div>
                   <div>
-                    <h6>APR Equivalent</h6> <h5>$27% - 52%</h5>
+                    <h6>APR Equivalent</h6>
+                    <p className="font-bold">$27% - 52%</p>
                   </div>
                   <div>
-                    <h6>Token Price</h6> <h5>$50.00</h5>
+                    <h6>Token Price</h6> <p className="font-bold">$50.00</p>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
@@ -224,7 +230,7 @@ export default function Home() {
                       Single Family
                     </p>
                   </div>
-                  <div className="flex text-sm gap-4">
+                  <div className="flex text-sm gap-4 lg:gap-2">
                     <div className="flex items-center gap-1">
                       <Armchair className="stroke-primary" size={20} />4
                     </div>
@@ -247,9 +253,9 @@ export default function Home() {
               </div>
             </div>
             {/* asset card */}
-            <div className="w-[373px] relative bg-white  rounded-2xl shadow-medium flex flex-col justify-between">
+            <div className="w-full relative bg-white  rounded-2xl shadow-medium flex flex-col justify-between">
               {/* head section */}
-              <div className="absolute -end-3 top-8 shadow-md bg-red-500 p-1 px-3  __tip_radius">
+              <div className="absolute -end-3 top-12 shadow-md bg-red-500 p-1 px-3  __tip_radius">
                 <h6 className="text-white font-bold">Rental Property</h6>
               </div>
               <div
@@ -269,13 +275,15 @@ export default function Home() {
               <div className="p-4 space-y-5">
                 <div className="flex justify-between ">
                   <div>
-                    <h6>Total Investments</h6> <h5>$136.600</h5>
+                    <h6>Total Investments</h6>{" "}
+                    <p className="font-bold">$136.600</p>
                   </div>
                   <div>
-                    <h6>APR Equivalent</h6> <h5>$27% - 52%</h5>
+                    <h6>APR Equivalent</h6>{" "}
+                    <p className="font-bold">$27% - 52%</p>
                   </div>
                   <div>
-                    <h6>Token Price</h6> <h5>$50.00</h5>
+                    <h6>Token Price</h6> <p className="font-bold">$50.00</p>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
@@ -284,7 +292,7 @@ export default function Home() {
                       Single Family
                     </p>
                   </div>
-                  <div className="flex text-sm gap-4">
+                  <div className="flex text-sm gap-4 lg:gap-2">
                     <div className="flex items-center gap-1">
                       <Armchair className="stroke-primary" size={20} />4
                     </div>
@@ -311,30 +319,30 @@ export default function Home() {
       </section>
       <section className="w-full pt-40 bg-white ">
         <div className="container px-10 pt-12 space-y-10 mx-auto">
-          <div className="border-2 flex border-primary rounded-3xl h-80">
-            <div className="w-2/3 h-full flex flex-col justify-between px-14 py-12">
+          <div className="border-2 flex flex-col lg:flex-row border-primary rounded-3xl h-fit lg:h-80">
+            <div className="lg:w-2/3 w-full h-full flex flex-col gap-4 lg:gap-0 justify-between px-14 py-12">
               <h5>
                 Calculate returns effortlessly and make informed financial
                 decisions for a brighter future.
               </h5>
 
-              <div className="w-full">
-                <div className="w-full grid grid-cols-3 justify-between">
+              <div className="w-full space-y-4">
+                <div className="w-full grid md:grid-cols-3 grid-cols-1  justify-between">
                   <p>Initial Investment</p>
-                  <div className="flex justify-end">
+                  <div className="flex md:justify-end">
                     <CustomSlider />
                   </div>
-                  <h5 className="text-primary flex justify-end">$2,700</h5>
+                  <h5 className="text-primary flex md:justify-end">$2,700</h5>
                 </div>
-                <div className="w-full grid grid-cols-3 justify-between">
+                <div className="w-full grid md:grid-cols-3 grid-cols-1 justify-between">
                   <p>Monthly recurring investment</p>
-                  <div className="flex justify-end">
+                  <div className="flex md:justify-end">
                     <CustomSlider />
                   </div>
-                  <h5 className="text-primary flex justify-end">$500</h5>
+                  <h5 className="text-primary flex md:justify-end">$500</h5>
                 </div>
               </div>
-              <div className="w-1/2 flex  justify-between">
+              <div className="md:w-1/2 w-full flex  justify-between">
                 <div>
                   <h6>Annual rent return</h6>
                   <h5>14.4%</h5>
@@ -349,7 +357,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="bg-primary p-5 flex-grow h-full w-1/3 flex flex-col justify-between items-center text-white rounded-e-2xl">
+            <div className="bg-primary p-5 flex-grow h-full lg:w-1/3 w-full flex flex-col justify-between items-center text-white rounded-b-2xl lg:rounded-e-2xl">
               <div></div>
               <div className="flex flex-col items-center">
                 <h5>Projected returns in 5 years</h5>
@@ -407,8 +415,8 @@ export default function Home() {
       </section>
       <section className="w-full pt-40 pb-20 bg-white">
         <div className="container px-10 pt-12 space-y-10 mx-auto">
-          <footer className="flex justify-between">
-            <div className="w-1/4 ">
+          <footer className="flex flex-col lg:flex-col lg:gap-0 gap-10 justify-between">
+            <div className="lg:w-1/4 ">
               <div className="flex">
                 <img className="h-16" src="/images/Logo.png" alt="logo" />
                 <p className="text-content">
@@ -418,7 +426,7 @@ export default function Home() {
               </div>
             </div>
             {/* middle footer section  */}
-            <div className="capitalize flex w-1/2 justify-between">
+            <div className="capitalize flex flex-col lg:flex-row w-1/2 justify-between">
               <div className="flex flex-col gap-4">
                 <h6>Company</h6>
                 <p>about us</p>

@@ -45,14 +45,25 @@ function Component() {
           <img src="/images/Logo.png" className="size-6" alt="" />
           <h5>RWA/USDC</h5>
         </div>
-        <div className="w-full flex  justify-between">
+        <div className="w-full flex md:flex-row flex-col  justify-between">
           <h4>$300.00</h4>
-          <Tabs defaultValue="year" className="w-[400px] flex justify-end">
+          <Tabs
+            defaultValue="year"
+            className="md:w-[400px] w-auto flex justify-start md:justify-end"
+          >
             <TabsList>
-              <TabsTrigger value="hours">24H</TabsTrigger>
-              <TabsTrigger value="week">1W</TabsTrigger>
-              <TabsTrigger value="month">1M</TabsTrigger>
-              <TabsTrigger value="year">1Y</TabsTrigger>
+              <TabsTrigger className="md:w-16 w-fit " value="hours">
+                24H
+              </TabsTrigger>
+              <TabsTrigger className="md:w-16 w-fit " value="week">
+                1W
+              </TabsTrigger>
+              <TabsTrigger className="md:w-16 w-fit " value="month">
+                1M
+              </TabsTrigger>
+              <TabsTrigger className="md:w-16 w-fit " value="year">
+                1Y
+              </TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
