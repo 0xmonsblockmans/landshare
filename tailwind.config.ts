@@ -6,7 +6,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/(select|listbox|divider|popover|button|ripple|spinner|scroll-shadow).js",
+    "./node_modules/@nextui-org/theme/dist/components/(select|slider|listbox|divider|popover|button|ripple|spinner|scroll-shadow).js"
   ],
   theme: {
     extend: {
@@ -18,6 +18,7 @@ const config: Config = {
         secondary: "#0A1339",
         content: "#535457",
         content2: "#9D9FA8",
+        lightGray: "#F6F8F9",
       },
     },
   },

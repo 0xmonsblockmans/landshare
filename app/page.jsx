@@ -1,17 +1,15 @@
-import Image from "next/image";
 import StockChart from "./componenets/StockChart";
 import SwabTokensCard from "./componenets/SwabTokensCard";
+
 import {
   Armchair,
+  ArrowRight,
   BathIcon,
   MapPin,
-  Pin,
-  Recycle,
-  Redo,
   RefreshCcw,
-  Reply,
   Utensils,
 } from "lucide-react";
+import { Button } from "./componenets/Button";
 
 const FinancialSummaryItems = [
   { title: "Gross Rent per Year", amount: "$13,200" },
@@ -32,10 +30,10 @@ const FinancialSummaryItems = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-14">
+    <div className="flex flex-col ">
       <section className="flex px-10 container mx-auto gap-12">
         <div className="w-2/3  flex flex-col gap-12">
-          {/* <StockChart /> */}
+          <StockChart />
           <section className="flex gap-6">
             <div className="bg-white p-6 w-1/3 rounded-2xl flex flex-col gap-2">
               <p className="text-content2">Cash on Cash Return</p>
@@ -70,7 +68,7 @@ export default function Home() {
             {FinancialSummaryItems.map((item) => (
               <div className="w-full flex justify-between">
                 {item.special ? (
-                  <div className="p-4 bg-gray-100 border-[1px] border-gray-300 flex flex-col    gap-6 rounded-2xl w-full">
+                  <div className="p-4 bg-lightGray border-[1px] border-gray-300 flex flex-col    gap-6 rounded-2xl w-full">
                     {item.special.map((element) => (
                       <div className="w-full flex justify-between">
                         <p className="font-bold">{element.title}</p>
@@ -274,6 +272,80 @@ export default function Home() {
               <div className="bg-primary px-2 py-3 w-full rounded-b-2xl text-white flex justify-between items-center">
                 <h5>LSRWA Holders Earn</h5>
                 <h4>$14,220</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="w-full bg-white ">
+        <div className="container px-10 pt-12 space-y-10 mx-auto">
+          <div className="border-2 flex border-primary rounded-3xl h-80">
+            <div className="w-2/3 h-full flex flex-col justify-between px-14 py-12">
+              <h5>
+                Calculate returns effortlessly and make informed financial
+                decisions for a brighter future.
+              </h5>
+              <div className="w-full">
+                <div className="w-full flex justify-between">
+                  <p>Initial Investment</p>
+                  <h5 className="text-primary">$2,700</h5>
+                </div>
+                <div className="w-full flex justify-between">
+                  <p>Monthly recurring investment</p>
+                  <h5 className="text-primary">$500</h5>
+                </div>
+              </div>
+              <div className="w-1/2 flex  justify-between">
+                <div>
+                  <h6>Annual rent return</h6>
+                  <h5>14.4%</h5>
+                </div>
+                <div>
+                  <h6>Annual rent return</h6>
+                  <h5>14.4%</h5>
+                </div>
+                <div>
+                  <h6>Annual rent return</h6>
+                  <h5>14.4%</h5>
+                </div>
+              </div>
+            </div>
+            <div className="bg-primary p-5 flex-grow h-full w-1/3 flex flex-col justify-between items-center text-white rounded-e-2xl">
+              <div></div>
+              <div className="flex flex-col items-center">
+                <h5>Projected returns in 5 years</h5>
+                <h2>$5.500</h2>
+              </div>
+              <div className="w-full">
+                <Button className="w-full h-14 bg-white text-black text-md rounded-full font-bold">
+                  Invest Now <ArrowRight />
+                </Button>
+              </div>
+              <div>
+                <p className="text-white/80">
+                  *Estimated annual returns, using yield statistics from all
+                  properties on the platform.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="w-full bg-white">
+        <div className="container px-10 pt-12 space-y-10 mx-auto">
+          <h2 className="text-center w-4/5 mx-auto">
+            Effortless Property Investment in 4 Steps: Landshare and RWA Tokens
+            Make It Easy
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 w-full">
+            <div className="bg-primary text-white h-72  rounded-2xl px-6 py-5 flex flex-col ga">
+              <div className="w-full flex justify-center">
+                <h5 className="flex items-center gap-1">
+                  <div className="border-[2px] border-white aspect-square rounded-full flex text-sm items-center justify-center  size-7">
+                    1
+                  </div>
+                  Sign up
+                </h5>
               </div>
             </div>
           </div>

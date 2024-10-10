@@ -34,7 +34,7 @@ const chartConfig = {
     label: "Price",
     color: "hsl(var(--chart-1))",
   },
-} satisfies ChartConfig;
+};
 
 function Component() {
   return (

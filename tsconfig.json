@@ -21,6 +21,18 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/componenets/Button.jsx",
+    "app/componenets/card.jsx",
+    "app/componenets/chart.jsx",
+    "app/componenets/StockChart.jsx",
+    "app/componenets/SwabTokensCard.sx",
+    "app/layout.jsx",
+    "app/page.jsx"
+  ],
   "exclude": ["node_modules"]
 }
